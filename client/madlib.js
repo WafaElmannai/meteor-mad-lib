@@ -1,22 +1,33 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
-import './main.html';
+import './madlib.html';
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+Template.madlib.onRendered(function() {
+
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
+Template.madlib.events({
+	'submit ': function(event, template) {
+		event.preventDefault();
+		console.log('Hello world!');
+
+	}
 });
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
+Template.madlib.events({
+	'submit .form01': function(event) {
+		event.preventDefault();
+		const target =event.target;
+		const Exclamation=target.Exclamation.value;
+		const Adverb=target.Adverb.value;
+		const Noun=target.Noun.value;
+		const Verb=target.Verb.value;
+
+		const madlib01=`${Exclamation}!the dog jumped ${Adverb} on the ${Noun} and ran ${Verb} yoyo`;
+		$("#head01").hide();
+		$("#head01").text(madlib01).fadeIn("slow").css("color","#4422DD");
+
+
+	}
 });
