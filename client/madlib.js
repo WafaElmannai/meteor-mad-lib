@@ -24,7 +24,7 @@ Template.madlib.events({
 		const Noun=target.Noun.value;
 		const Verb=target.Verb.value;
 
-		const madlib01=`${Exclamation}!the dog jumped ${Adverb} on the ${Noun} and ran ${Verb} yoyo`;
+		const madlib01=`${Exclamation}!you say, as you ${Adverb} jump onto your ${Noun} and ${Verb} into the sunset`;
 		$("#head01").hide();
 		$("#head01").text(madlib01).fadeIn("slow").css("color","#4422DD");
 

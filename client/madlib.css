@@ -11,4 +11,9 @@
 .form-control {
 	width: 100%;
 	padding: 10%;
+
+}
+.container-fluid{
+	max-width: 800px;
+	margin:0 auto;
 }
